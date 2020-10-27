@@ -53,7 +53,7 @@ export IMGEN_DC2_DATA='/path/to/img_gen/dc2_data'
 ```
 python generate_dc2_img.py 4855 test 10000
 ```
-to generate 10 000 images of galaxy and their corresponding PSF on the directory ``IMGEN_DC2_DATA/test/`` from the tract 4855. You can look at the tract position [fig.14, p.27 here](https://arxiv.org/pdf/2010.05926.pdf).
+to generate 10 000 images of galaxy and their corresponding PSF on the directory ``IMGEN_DC2_DATA/test/`` from the tract 4855. You can look at the tract position (a tract is a rectangular region of the sky with a common map projection) [see fig.14, p.27 here](https://arxiv.org/pdf/2010.05926.pdf).
 
 2. Or the shell file ``generation.sh`` modifying it with the corresponding tract number, storing directory and number of images you want. Then run:
 ```
