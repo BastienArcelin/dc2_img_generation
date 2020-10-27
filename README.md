@@ -1,6 +1,6 @@
 # DC2 images generation
 
-This repo contains script enabling to generate galaxies and corresponding PSF images using the LSST DESC DC2 catalogs as presented below. Images are only 59x59 pixels to match the most generic PSF image size that can be produced from lsst stack
+This repo contains script enabling to generate galaxies and corresponding PSF images using the [LSST DESC DC2 catalogs](https://arxiv.org/pdf/2010.05926.pdf) as presented below. Images are only 59x59 pixels to match the most generic PSF image size that can be produced from lsst stack
 
 **Important**: The script and method presented here is adapted to use ac [CC IN2P3](https://doc.cc.in2p3.fr/index.html) only. Links and installation procedure are specific to this usage. You need to be a member of LSST collaboration to have the required access to run this code.
 
@@ -53,7 +53,7 @@ export IMGEN_DC2_DATA='/path/to/img_gen/dc2_data'
 ```
 python generate_dc2_img.py 4855 test 10000
 ```
-to generate 10 000 images of galaxy and their corresponding PSF on the directory ``IMGEN_DC2_DATA/test/`` from the tract 4855. You can look at the tract position [here]().
+to generate 10 000 images of galaxy and their corresponding PSF on the directory ``IMGEN_DC2_DATA/test/`` from the tract 4855. You can look at the tract position [fig.14, p.27 here](https://arxiv.org/pdf/2010.05926.pdf).
 
 2. Or the shell file ``generation.sh`` modifying it with the corresponding tract number, storing directory and number of images you want. Then run:
 ```
