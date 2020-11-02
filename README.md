@@ -9,7 +9,7 @@ This script is highly inspired from the work of Yao-Yuan Mao, Scott Daniel and M
 ## Catalogs used
 I access catalog through [gcr-catalogs](https://github.com/LSSTDESC/gcr-catalogs) developped in the LSST DESC collaboration. This tools enables access to data stored at NERSC if needed.
 
-I use the extragalactic catalog ``cosmoDC2_v1.1.4_image`` as true catalog, you can find the corresponding paper [here](https://arxiv.org/pdf/1907.06530.pdf), and the object catalog for Run 2.2i DR6 WFD ``dc2_object_run2.2i_dr6_wfd``.
+I use the extragalactic catalog ``cosmoDC2_v1.1.4_image`` as true catalog, you can find the corresponding paper [here](https://arxiv.org/pdf/1907.06530.pdf), and the object catalog for Run 2.2i DR6 WFD ``dc2_object_run2.2i_dr6_wfd`` (created as described in section 7 [here](https://arxiv.org/pdf/2010.05926.pdf), see also [Bosh et al.](https://arxiv.org/pdf/1705.06766.pdf)).
 
 Images at CC are located at the following addresses:
 - for *u*-filter: ``/sps/lssttest/dataproducts/desc/DC2/Run2.2i/v19.0.0-v1/rerun/run2.2i-coadd-wfd-dr6-v1-u``
