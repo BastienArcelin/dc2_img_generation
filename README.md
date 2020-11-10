@@ -1,4 +1,4 @@
-# DC2 images generation
+# DC2 images generation at CC IN2P3
 
 This repo contains script enabling to generate galaxies and corresponding PSF images using the [LSST DESC DC2 catalogs](https://arxiv.org/pdf/2010.05926.pdf) as presented below. Images are only 59x59 pixels to match the most generic PSF image size that can be produced from lsst stack
 
@@ -37,7 +37,7 @@ pip install https://github.com/yymao/FoFCatalogMatching/archive/master.zip
 ```
 
 ## Before starting
-1. Add a IMGEN_DATA environment variable, in the shell you are running, which points to the directory where you want your data to be stored.
+1. Add a IMGEN_DC2_DATA environment variable, in the shell you are running, which points to the directory where you want your data to be stored.
 
 Example, add to your ``.bashrc``:
 ```
