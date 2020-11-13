@@ -31,7 +31,7 @@ cd gcr-catalogs/
 python setup.py install
 ```
 
-4. Install FoFMatching (developped by Yao-Yuan Mao [here](https://github.com/yymao/FoFCatalogMatching/))
+4. Install FoFMatching (developped by Yao-Yuan Mao [here](https://github.com/yymao/FoFCatalogMatching/), described [here](https://arxiv.org/pdf/2008.12783.pdf))
 ```
 pip install https://github.com/yymao/FoFCatalogMatching/archive/master.zip
 ```
