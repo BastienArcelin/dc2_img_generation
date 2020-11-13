@@ -21,5 +21,4 @@ cd /pbs/home/b/barcelin/pbs_throng_link/dc2_img_generation/scripts/
 
 ##python generate_dc2_img.py 4637 validation 10000 ## Vadidation
 ##python generate_dc2_img.py 4855 test 10000 ## Test
-
 python generate_dc2_img.py 5074 training 10000 ## Training
