@@ -8,17 +8,16 @@ import warnings
 import healpy as hp
 from astropy.table import Table
 
-sys.path.insert(0,'../scripts/tools_for_VAE/')
-from tools_for_VAE import cutout_img_dc2, utils
+from . import cutout_img_dc2, utils
 
 import FoFCatalogMatching
 import GCRCatalogs
 import lsst.geom
 import lsst.daf.persistence as dafPersist
 
-tract = '4855'# str(sys.argv[1]) # test: 4855 # training: 5074 # validation: 4637
-training_test_val = 'test_mag_26.5'#str(sys.argv[2]) # test, training, validation
-N = 1000#int(sys.argv[3]) # Usually 10 000 images per file
+tract = str(sys.argv[1]) # test: 4855 # training: 5074 # validation: 4637
+training_test_val = str(sys.argv[2]) # test, training, validation
+N = int(sys.argv[3]) # Usually 10 000 images per file
 
 # Read in the observed galaxy catalog data.
 with warnings.catch_warnings():
