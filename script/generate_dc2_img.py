@@ -8,7 +8,7 @@ import warnings
 import healpy as hp
 from astropy.table import Table
 
-from . import cutout_img_dc2, utils
+import cutout_img_dc2, utils
 
 import FoFCatalogMatching
 import GCRCatalogs
@@ -18,6 +18,7 @@ import lsst.daf.persistence as dafPersist
 tract = str(sys.argv[1]) # test: 4855 # training: 5074 # validation: 4637
 training_test_val = str(sys.argv[2]) # test, training, validation
 N = int(sys.argv[3]) # Usually 10 000 images per file
+mag_cut = str(sys.argv[4]) # 24.5 or 26.5
 
 # Read in the observed galaxy catalog data.
 with warnings.catch_warnings():
@@ -32,7 +33,7 @@ with warnings.catch_warnings():
 # Let's define a magnitude cut
 mag_filters = [
     (np.isfinite, 'mag_r'),
-    'mag_r < 26.5']
+    'mag_r < '+str(mag_cut)]
 
 # Load ra and dec from object, using both of the filters we just defined.
 object_data = gc_obs.get_quantities(['ra', 'dec', 'blendedness', 'snr_r_cModel',
@@ -54,7 +55,7 @@ for ipx in ipix:
 pos_filters=[f'ra >= {min_ra}',f'ra <={max_ra}', f'dec >= {min_dec}', f'dec <= {max_dec}']
 
 # Define a mag cut for truth catalog 
-truth_mag_filters = ['mag_r < 26.5']
+truth_mag_filters = ['mag_r < '+str(mag_cut)]
 
 # Load wanted quantities from truth catalog (https://github.com/LSSTDESC/gcr-catalogs/blob/master/GCRCatalogs/SCHEMA.md)
 quantities = ['galaxy_id', 'ra', 'dec', 
@@ -100,14 +101,6 @@ repo_u = '/sps/lssttest/dataproducts/desc/DC2/Run2.2i/v19.0.0-v1/rerun/run2.2i-c
 butler_grizy = dafPersist.Butler(repo_grizy)
 butler_u = dafPersist.Butler(repo_u)
 
-# Create the numpy arrays
-t_3 = time.time()
-
-img_sample = np.zeros((N,59,59,6))
-psf_sample = np.zeros((N,59,59,6))
-
-
-indices = np.random.choice(list(range(len(truth_idx))), size=N, replace=False)
 
 def gen_function(indices):
     np.random.seed() # important for multiprocessing !
@@ -165,6 +158,18 @@ def gen_function(indices):
     mag_r_true.append(truth_data['mag_r_lsst'][truth_idx[i]])
     
     return img, psf, idx, e1, e2, hsm_e1, hsm_e2, shear1, shear2, redshift, blend, snr, convergence, redshift_true, mag_r_meas, mag_r_true
+
+
+# Create the numpy arrays
+t_3 = time.time()
+
+img_sample = np.zeros((N,59,59,6))
+psf_sample = np.zeros((N,59,59,6))
+
+
+indices = np.random.choice(list(range(len(truth_idx))), size=N, replace=False)
+
+
 img_sample = []
 psf_sample = []
 
@@ -227,6 +232,6 @@ df['mag_r_true']=np.array(mag_r_true)[:,0] # Magnitude in input of simulation
 
 # Save the arrays
 data_dir = str(os.environ.get('IMGEN_DC2_DATA'))
-np.save(data_dir+str(training_test_val)+'/img_sample.npy', img_sample)
-np.save(data_dir+str(training_test_val)+'/psf_sample.npy', psf_sample)
-df.to_csv(data_dir+str(training_test_val)+'/img_data.csv', index=False)
+np.save(data_dir+str(training_test_val)+'/img_sample_777.npy', img_sample)
+np.save(data_dir+str(training_test_val)+'/psf_sample_777.npy', psf_sample)
+df.to_csv(data_dir+str(training_test_val)+'/img_data_777.csv', index=False)
