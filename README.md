@@ -60,6 +60,12 @@ to generate 10 000 images of galaxy and their corresponding PSF on the directory
 qsub generation.sh
 ```
 
+## Examples
+Two notebooks show two different examples:
+- the [first one](https://github.com/BastienArcelin/dc2_img_generation/blob/main/notebooks/dc2_stamps_and_corresponding_parameters.ipynb) shows how to generate stamps centred on galaxies using DC2 catalogs and to obtain the corresponding measured PSF image.
+- the [second one](https://github.com/BastienArcelin/dc2_img_generation/blob/main/notebooks/generation_of_noiseless_dc2_img.ipynb) shows how to, from galaxy indices 
+saved at the generation of DC2 galaxy stamps, produce the corresponding noiseless image of the centred galaxy using [GalSim](https://github.com/GalSim-developers/GalSim). It uses data from [the GalSim repo](https://github.com/GalSim-developers/GalSim/tree/releases/2.3/share). 
+
 ## Required packages
 - lsst science pipeline software
 - gcr-catalogs
