@@ -4,7 +4,7 @@ This repo contains script enabling to generate galaxies and corresponding PSF im
 
 **Important**: The script and method presented here is adapted to use ac [CC IN2P3](https://doc.cc.in2p3.fr/index.html) only. Links and installation procedure are specific to this usage. You need to be a member of LSST collaboration to have the required access to run this code.
 
-This script is highly inspired from the work of Yao-Yuan Mao, Scott Daniel and Michael Wood-Vasey realised in these 3 notebooks ([1](https://github.com/LSSTDESC/gcr-catalogs/blob/master/examples/GCRCatalogs%20Demo.ipynb), [2](https://github.com/LSSTDESC/DC2-analysis/blob/master/tutorials/matching_fof.ipynb) and [3](https://github.com/LSSTDESC/DC2-analysis/blob/master/tutorials/dm_butler_postage_stamps.ipynb)).
+This script is inspired from the work of Yao-Yuan Mao, Scott Daniel and Michael Wood-Vasey realised in these 3 notebooks ([1](https://github.com/LSSTDESC/gcr-catalogs/blob/master/examples/GCRCatalogs%20Demo.ipynb), [2](https://github.com/LSSTDESC/DC2-analysis/blob/master/tutorials/matching_fof.ipynb) and [3](https://github.com/LSSTDESC/DC2-analysis/blob/master/tutorials/dm_butler_postage_stamps.ipynb)).
 
 ## Catalogs used
 I access catalog through [gcr-catalogs](https://github.com/LSSTDESC/gcr-catalogs) developped in the LSST DESC collaboration. This tools enables access to data stored at NERSC if needed.
