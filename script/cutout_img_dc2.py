@@ -15,7 +15,7 @@ from astropy.visualization import ZScaleInterval
 zscale = ZScaleInterval()
 
 
-def cutout_coadd_ra_dec(butler, ra, dec, filter='r', datasetType='deepCoadd', **kwargs):
+def cutout_coadd_ra_dec(butler, ra, dec, filter='r', cutoutSideLength=59, datasetType='deepCoadd', **kwargs):
     """
     Produce a cutout from coadd from the given butler at the given RA, Dec in decimal degrees.
     
@@ -40,7 +40,7 @@ def cutout_coadd_ra_dec(butler, ra, dec, filter='r', datasetType='deepCoadd', **
     """
     #radec = afwGeom.SpherePointEndpoint(ra, dec, lsst.geom.degrees)# afwGeom.degrees SpherePoint
     radec = lsst.geom.SpherePoint(ra, dec, lsst.geom.degrees)
-    return cutout_coadd_spherepoint(butler, radec, filter=filter, datasetType=datasetType)
+    return cutout_coadd_spherepoint(butler, radec, filter=filter, datasetType=datasetType, cutoutSideLength=cutoutSideLength)
     
 
 def cutout_coadd_spherepoint(butler, radec, filter='r', datasetType='deepCoadd',
